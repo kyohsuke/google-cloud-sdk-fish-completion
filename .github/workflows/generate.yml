@@ -25,6 +25,12 @@ jobs:
       - name: Generate bq
         run: bash .github/workflows/generate_bq.bash
 
+      - name: Generate gcloud
+        run: bash .github/workflows/generate_gcloud.bash
+
+      - name: Generate gsutil
+        run: bash .github/workflows/generate_gsutil.bash
+
       - name: Push to master
         run: |
           CHANGES=$(git status -s | grep -v .github | wc -l)
