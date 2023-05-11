@@ -1,0 +1,1 @@
+complete -c bq -x -n __fish_use_subcommand -a "add-iam-policy-binding cancel cp extract get-iam-policy head help info init insert load ls mk mkdef partition query remove-iam-policy-binding rm set-iam-policy shell show truncate update version wait"
