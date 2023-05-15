@@ -2,8 +2,8 @@
 
 name: Generate fish completion
 on:
-  # schedule:
-  #   - cron: "0 0 * * *"
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -18,18 +18,12 @@ jobs:
           submodules: recursive
 
       - name: Set up Cloud SDK
-        uses: 'google-github-actions/setup-gcloud@v1'
+        uses: google-github-actions/setup-gcloud@v1
         with:
           version: '>= 363.0.0'
 
       - name: Generate bq
         run: bash .github/workflows/generate_bq.bash
-
-      - name: Generate gcloud
-        run: bash .github/workflows/generate_gcloud.bash
-
-      - name: Generate gsutil
-        run: bash .github/workflows/generate_gsutil.bash
 
       - name: Push to master
         run: |
